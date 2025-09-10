@@ -1,5 +1,5 @@
-@use "../../mixins/_mixin.scss" as m;
-@use "../../variables/_variable.scss" as v;
+@use "../scss/mixins/mixin.scss" as m;
+@use "../scss/variables/variable.scss" as v;
 body {
   margin: 0;
   padding: 0;
