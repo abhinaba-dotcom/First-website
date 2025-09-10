@@ -1,5 +1,8 @@
 @use "../scss/mixins/mixin.scss" as m;
 @use "../scss/variables/variable.scss" as v;
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -59,7 +62,6 @@ header {
   }
 }
 
-
 main {
   padding: 30px 60px 0px 60px;
   .main-container-top {
@@ -113,7 +115,7 @@ main {
       "menu lower lower lower"
       "footer footer footer footer";
     gap: 10px;
-    .item1{
+    .item1 {
       height: 580px;
       @include m.set-grid-area(menu);
     }
