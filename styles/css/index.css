@@ -23,15 +23,15 @@ header nav ul li {
   cursor: pointer;
 }
 header .image-container {
+  background-image: url("../../assets/img/bluebells,_oxfordshire.webp");
   width: 100%;
   height: 250px;
   background-color: black;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header .image-container .search-container {
-  position: absolute;
-  left: 40%;
-  top: 40%;
   display: flex;
 }
 header .image-container .search-container input {
@@ -39,37 +39,39 @@ header .image-container .search-container input {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   outline: none;
-  padding: 8px 10px 8px 10px;
+  padding: 12px 15px 12px 15px;
   width: 280px;
+}
+header .image-container .search-container input::placeholder {
+  font-weight: bold;
+  opacity: 1;
+  color: rgb(60, 169, 169);
 }
 header .image-container .search-container .search-btn {
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 8px 10px 8px 10px;
-  background-color: green;
+  background-color: rgb(60, 169, 169);
   color: white;
   cursor: pointer;
-}
-
-.nav {
-  grid-area: nav;
+  font-weight: bold;
 }
 
 main {
   padding: 30px 60px 0px 60px;
 }
-main .videos-top {
+main .main-container-top {
   display: flex;
   justify-content: space-between;
 }
-main .videos-bottom {
+main .main-container-end {
   height: 45px;
   justify-content: space-between;
-  margin-top: 25px;
   display: flex;
+  margin-top: 25px;
 }
-main .videos-bottom button {
+main .main-container-end button {
   all: unset;
   padding: 0px 15px 0px 15px;
   border-radius: 4px;
@@ -80,44 +82,65 @@ main .videos-bottom button {
   color: white;
   cursor: pointer;
 }
-main .videos-bottom .boxes {
+main .main-container-end .main-container-end-boxes {
   display: flex;
-  gap: 6px;
+  gap: 12px;
 }
-main .videos-bottom .boxes .box {
+main .main-container-end .main-container-end-boxes .main-container-end-box {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: none;
+  border-radius: 5px;
 }
-main .main-container {
+main .main-container-end .main-container-end-boxes .box1 {
+  background-color: rgb(60, 169, 169);
+  color: white;
+}
+main .main-container-end .main-container-end-boxes .box2,
+main .main-container-end .main-container-end-boxes .box3,
+main .main-container-end .main-container-end-boxes .box4 {
+  background-color: rgb(232, 225, 225);
+  color: black;
+}
+main .main-container-middle {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: "nav header header header" "nav main main main" "nav footer footer footer";
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "menu header-left header-middle header-right" "menu middle middle middle" "menu lower lower lower" "footer footer footer footer";
   gap: 10px;
 }
-main .main-container .upper-left .upper-middle .upper-right {
-  grid-area: header;
+main .main-container-middle .item1 {
+  height: 580px;
+  grid-area: menu;
 }
-main .main-container .middle {
-  grid-area: main;
+main .main-container-middle .item2 {
+  grid-area: header-left;
 }
-main .main-container .bottom {
+main .main-container-middle .item3 {
+  grid-area: header-middle;
+}
+main .main-container-middle .item4 {
+  grid-area: header-right;
+}
+main .main-container-middle .item5 {
+  grid-area: middle;
+}
+main .main-container-middle .item6 {
+  grid-area: lower;
+}
+main .main-container-middle .item7 {
+  height: 80px;
   grid-area: footer;
 }
-main .main-container .item {
-  height: 180px;
+main .main-container-middle .main-container-middle-item {
   background-color: #1eaafc;
   background-image: linear-gradient(130deg, #6c52d9 0%, #1eaafc 85%, #3edfd7 100%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   color: #fff;
   border-radius: 4px;
   border: 6px solid #171717;
-}
-main .main-container .nav {
-  height: 585px;
 }
 
 footer {
@@ -135,29 +158,39 @@ footer .footer-container {
   gap: 48px;
 }
 footer .footer-container .footer-container-left {
-  width: 300px;
   margin-top: 20px;
 }
 footer .footer-container .footer-container-left p {
+  width: 300px;
   text-align: start;
 }
-footer .footer-container .footer-container-middle {
+footer .footer-container .footer-container-right {
   display: flex;
-  flex-direction: column;
+  gap: 25px;
+}
+footer .footer-container .footer-container-right .footer-container-right-start {
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-footer .footer-container .footer-container-right {
+footer .footer-container .footer-container-right .footer-container-right-start h2 {
+  padding-left: 25px;
+}
+footer .footer-container .footer-container-right .footer-container-right-start ul li {
+  list-style: none;
+}
+footer .footer-container .footer-container-right .footer-container-right-end {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 35px;
 }
-footer .footer-container .footer-container-right .footer-icon-box {
+footer .footer-container .footer-container-right .footer-container-right-end .footer-icon-box {
   display: flex;
   gap: 8px;
 }
-footer .footer-container .footer-container-right .footer-icon-box .footer-icon {
+footer .footer-container .footer-container-right .footer-container-right-end .footer-icon-box .footer-icon {
   background-color: white;
   border-radius: 2px;
   padding: 8px;
@@ -166,12 +199,12 @@ footer .footer-container .footer-container-right .footer-icon-box .footer-icon {
   padding-left: 10px;
   cursor: pointer;
 }
-footer .footer-container .footer-container-right .footer-container-right-bottombox {
+footer .footer-container .footer-container-right .footer-container-right-end .footer-container-right-bottombox {
   display: flex;
   justify-content: flex-end;
   padding-bottom: 8px;
 }
-footer .footer-container .footer-container-right .footer-container-right-bottombox ul li {
+footer .footer-container .footer-container-right .footer-container-right-end .footer-container-right-bottombox ul li {
   list-style: none;
 }
 
